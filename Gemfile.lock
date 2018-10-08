@@ -64,6 +64,7 @@ GEM
       railties (>= 3.2, < 6.0)
     erubi (1.7.1)
     ffi (1.9.25)
+    geocoder (1.5.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (1.1.0)
@@ -194,6 +195,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.11)
   byebug (~> 10.0.0)
   dotenv-rails (~> 2.2.1)
+  geocoder (~> 1.5.0)
   listen (~> 3.1.5)
   pg (~> 0.21)
   pry (~> 0.11.3)
@@ -212,4 +214,4 @@ RUBY VERSION
    ruby 2.5.0p0
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
