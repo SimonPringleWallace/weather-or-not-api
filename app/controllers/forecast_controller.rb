@@ -1,6 +1,13 @@
+# frozen_string_literal: true
+
 class ForecastController < OpenReadController
   def index
-    @weather = Forecast.new.weather
+    @weather = Forecast.new(coordinates[:longitude], coordinates[:latitude]).weather
     render json: @weather
   end
+
+  def coordinates
+    params.require(:forecasts).permit(:longitude, :latitude)
+  end
 end
+# '42.3601', '-71.0589'

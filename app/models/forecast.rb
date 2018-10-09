@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'httparty'
 
 class Forecast
@@ -5,10 +7,16 @@ class Forecast
   base_uri 'https://api.darksky.net/forecast'
   DARKSKYKEY = ENV['DARK_SKY_KEY']
 
-  def get_data
-    self.class.get("/#{DARKSKYKEY}/42.3601,-71.0589")
+  def initialize(latitude, longitude)
+    @latitude = latitude
+    @longitude = longitude
   end
+
+  def weather_data
+    self.class.get("/#{DARKSKYKEY}/#{@latitude},#{@longitude}")
+  end
+
   def weather
-    get_data.parsed_response
+    weather_data.parsed_response
   end
 end

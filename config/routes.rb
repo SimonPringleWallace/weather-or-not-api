@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'forecast/index'
   resources :locations, except: %i[new edit]
   # RESTful routes
   resources :examples, except: %i[new edit]
