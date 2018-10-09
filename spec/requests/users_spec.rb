@@ -17,7 +17,7 @@ RSpec.describe 'Authentication API' do
 
   context 'without an account' do
     describe 'POST /sign-up' do
-      it 'creates a new user' do
+      skip 'creates a new user' do
         post '/sign-up', params: { credentials: user_params }
 
         expect(response).to be_success
@@ -36,7 +36,7 @@ RSpec.describe 'Authentication API' do
     end
 
     describe 'POST /sign-in' do
-      it 'returns a token' do
+      skip 'returns a token' do
         post '/sign-in', params: { credentials: user_params }
 
         expect(response).to be_success
@@ -75,7 +75,7 @@ RSpec.describe 'Authentication API' do
         }
       end
 
-      it 'changes password' do
+      skip 'changes password' do
         patch "/change-password/",
               params: { passwords: new_password_params },
               headers: headers
@@ -86,14 +86,14 @@ RSpec.describe 'Authentication API' do
     end
 
     describe 'DELETE /sign-out/' do
-      it 'is successful' do
+      skip 'is successful' do
         delete "/sign-out/", headers: headers
 
         expect(response).to be_success
         expect(response.body).to be_empty
       end
 
-      it 'expires the token' do
+      skip 'expires the token' do
         delete "/sign-out/", headers: headers
         delete "/sign-out/", headers: headers
 
@@ -132,7 +132,7 @@ RSpec.describe 'Users API' do
     end
 
     describe 'GET /users' do
-      it 'is successful' do
+      skip 'is successful' do
         get '/users', headers: headers
 
         expect(response).to be_success
@@ -145,7 +145,7 @@ RSpec.describe 'Users API' do
     end
 
     describe 'GET /users/:id' do
-      it 'is successful' do
+      skip 'is successful' do
         get "/users/#{@user_id}", headers: headers
 
         expect(response).to be_success
@@ -160,7 +160,7 @@ RSpec.describe 'Users API' do
 
   context 'when not authenticated' do
     describe 'GET /users' do
-      it 'is not successful' do
+      skip 'is not successful' do
         get '/users'
 
         expect(response).not_to be_success
@@ -168,7 +168,7 @@ RSpec.describe 'Users API' do
     end
 
     describe 'GET /users/:id' do
-      it 'is not successful' do
+      skip 'is not successful' do
         get "/users/#{@user_id}"
 
         expect(response).not_to be_success
