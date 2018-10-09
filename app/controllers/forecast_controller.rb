@@ -10,4 +10,3 @@ class ForecastController < OpenReadController
     params.require(:forecasts).permit(:longitude, :latitude)
   end
 end
-# '42.3601', '-71.0589'
