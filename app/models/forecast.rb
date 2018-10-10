@@ -1,15 +1,18 @@
 # frozen_string_literal: true
 
 require 'httparty'
+require 'geocoder'
 
 class Forecast
   include HTTParty
+  include Geocoder
   base_uri 'https://api.darksky.net/forecast'
   DARKSKYKEY = ENV['DARK_SKY_KEY']
 
-  def initialize(latitude, longitude)
-    @latitude = latitude
-    @longitude = longitude
+  def initialize(city)
+    geocode = Geocoder.search(city).first.coordinates
+    @latitude = geocode[0]
+    @longitude = geocode[1]
   end
 
   def weather_data

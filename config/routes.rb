@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   patch '/change-password' => 'users#changepw'
 
   # Dark Sky Route
-  get '/forecast' => 'forecast#index'
+  get '/forecast/:city' => 'forecast#index'
 end
