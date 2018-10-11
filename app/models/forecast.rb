@@ -17,7 +17,7 @@ class Forecast
   end
 
   def weather_data
-    puts "this is the base uri #{base_uri}"
+    puts "this is the base uri #{Forecast.base_uri}"
     self.class.get(
       "/#{@DS_key}/#{@latitude},#{@longitude}?exclude=[currently,minutely,hourly,alerts,flags]")
   end
