@@ -7,17 +7,18 @@ class Forecast
   include HTTParty
   include Geocoder
   base_uri 'https://api.darksky.net/forecast'
-  DARKSKYKEY = ENV['DARK_SKY_KEY']
+
 
   def initialize(city)
     geocode = Geocoder.search(city).first.coordinates
     @latitude = geocode[0]
     @longitude = geocode[1]
+    @DS_key = ENV['DARK_SKY_KEY']
   end
 
   def weather_data
     self.class.get(
-      "/#{DARKSKYKEY}/#{@latitude},#{@longitude}?exclude=[currently,minutely,hourly,alerts,flags]")
+      "/#{@DS_key}/#{@latitude},#{@longitude}?exclude=[currently,minutely,hourly,alerts,flags]")
   end
 
   def weather
