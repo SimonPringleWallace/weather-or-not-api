@@ -67,7 +67,7 @@ This will extend largely around DRYing out the code that I have and taking a
 hard look at the information I am currenly working with in the database to make
 sure that all of it is necessary.
 
-Link to Entity Relationship Diagram [ERD].(./public/Weather_or_Not_ERD.png)
+Link to Entity Relationship Diagram [ERD](./public/Weather_or_Not_ERD.png)
 
 # Installation
 - to access the code for this application please fork and clone this Repository or download the files.
