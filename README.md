@@ -50,8 +50,8 @@ Link to the client repo:
 # Planning and Development process:
 The process for creating the API for Weather or Not revolved around Dark Sky API.
 Without this crucial component and the information it provided, the app itself
-was useless and so much of the effort of creating the system was expended on
-trying to sync up this API with Dark Skys. This was largely achieved through
+was useless and so, much of the effort of creating the system was expended on
+trying to sync up this API with Dark Sky's. This was largely achieved through
 HTTPary, a process that involved instantiating new classes with the HTTParty
 methods and also a geo-coding gem to take in a city from the front end of the
 system, and turn it into the longitude and latitude required by Dark Sky.
@@ -67,13 +67,12 @@ This will extend largely around DRYing out the code that I have and taking a
 hard look at the information I am currenly working with in the database to make
 sure that all of it is necessary.
 
-Link to Entity Relationship Diagram (ERD).
-[ERD]('./public/Weather_or_Not_ERD.png')
+Link to Entity Relationship Diagram [ERD].(./public/Weather_or_Not_ERD.png)
 
 # Installation
 - to access the code for this application please fork and clone this Repository or download the files.
 - From the command line run:
-```bundle install``` to install all dependencies
-```bin/rails db:create``` to create the database
-```bin/rails db:migrate``` synchronize migrations
-```bin/rails s``` to host the server locally 
+- ```bundle install``` to install all dependencies
+- ```bin/rails db:create``` to create the database
+- ```bin/rails db:migrate``` synchronize migrations
+- ```bin/rails s``` to host the server locally
