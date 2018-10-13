@@ -15,7 +15,7 @@ class LocationsController < ProtectedController
 
   # POST /locations
   def create
-    @location = Location.new(location_params)
+    @location = current_user.locations.new(location_params)
 
     if @location.save
       render json: @location, status: :created, location: @location
@@ -41,7 +41,7 @@ class LocationsController < ProtectedController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_location
-      @location = Location.find(params[:id])
+      @location = current_user.locations.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
